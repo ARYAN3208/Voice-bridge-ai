@@ -1,0 +1,119 @@
+:root {
+
+    /* Colors */
+
+    --background: #f7f4ee;
+    --surface: #ffffff;
+    --surface-light: #faf8f4;
+
+    --primary: #1f1f1f;
+    --secondary: #555555;
+    --muted: #8b8b8b;
+
+    --accent: #c7a86d;
+    --accent-dark: #af8d4e;
+    --accent-light: #e8d6b4;
+
+    --border: #e6e0d6;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+
+    /* Typography */
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+
+    --fs-display: 4rem;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.75rem;
+    --fs-h4: 1.35rem;
+
+    --fs-lg: 1.125rem;
+    --fs-md: 1rem;
+    --fs-sm: .875rem;
+    --fs-xs: .75rem;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --line-height: 1.6;
+
+    /* Border Radius */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-round: 999px;
+
+    /* Shadows */
+
+    --shadow-sm: 0 4px 10px rgba(0,0,0,.05);
+
+    --shadow-md: 0 10px 25px rgba(0,0,0,.08);
+
+    --shadow-lg: 0 20px 50px rgba(0,0,0,.12);
+
+    --shadow-glow: 0 0 40px rgba(199,168,109,.2);
+
+    /* Spacing */
+
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 2.5rem;
+    --space-8: 3rem;
+    --space-9: 4rem;
+    --space-10: 5rem;
+
+    /* Width */
+
+    --container: 1280px;
+
+    /* Animation */
+
+    --transition-fast: .2s ease;
+    --transition: .3s ease;
+    --transition-slow: .5s ease;
+
+    /* Navbar */
+
+    --navbar-height: 80px;
+
+    /* Sidebar */
+
+    --sidebar-width: 270px;
+
+    /* Cards */
+
+    --card-padding: 24px;
+
+    /* Buttons */
+
+    --button-height: 52px;
+
+    /* Inputs */
+
+    --input-height: 52px;
+
+    /* Blur */
+
+    --blur: blur(18px);
+
+    /* Z-index */
+
+    --z-navbar: 1000;
+    --z-sidebar: 1100;
+    --z-modal: 1200;
+    --z-toast: 1300;
+}

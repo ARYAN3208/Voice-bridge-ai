@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Voice Notes | VoiceBridge AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <span>
+
+                    VoiceBridge AI
+
+                </span>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="nav-icon">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <div class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        VoiceBridge AI
+
+                    </h3>
+
+                    <small>
+
+                        AI Translator
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="translation.html">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    Live Translation
+
+                </a>
+
+                <a
+                    href="voice-notes.html"
+                    class="active">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Voice Notes
+
+                </a>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    History
+
+                </a>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card">
+
+                <h4>
+
+                    Recorder Status
+
+                </h4>
+
+                <p>
+
+                    Ready to record.
+
+                </p>
+
+                <span class="badge badge-success">
+
+                    Ready
+
+                </span>
+
+            </div>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="badge badge-success">
+
+                        AI Voice Recorder
+
+                    </span>
+
+                    <h1 class="mt-3">
+
+                        Voice Notes
+
+                    </h1>
+
+                    <p>
+
+                        Record, upload, manage and translate your voice notes with AI.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+<section class="dashboard-section">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Voice Recording Workspace
+
+            </h2>
+
+            <span class="badge badge-success">
+
+                Ready
+
+            </span>
+
+        </div>
+
+        <div class="recording-panel">
+
+            <button
+                id="recordVoice"
+                class="record-btn">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </button>
+
+            <h2>
+
+                Tap to Record
+
+            </h2>
+
+            <p>
+
+                Record your voice or upload an existing audio file.
+
+            </p>
+
+            <h1
+                id="recordTimer">
+
+                00:00
+
+            </h1>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid grid-4">
+
+            <button
+                class="btn btn-danger"
+                id="startRecording">
+
+                <i class="fa-solid fa-circle"></i>
+
+                Start
+
+            </button>
+
+            <button
+                class="btn btn-secondary">
+
+                <i class="fa-solid fa-stop"></i>
+
+                Stop
+
+            </button>
+
+            <button
+                class="btn btn-outline">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Delete
+
+            </button>
+
+            <button
+                class="btn btn-primary">
+
+                <i class="fa-solid fa-download"></i>
+
+                Save
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Upload Audio
+
+                </h2>
+
+            </div>
+
+            <div
+                id="dropArea"
+                class="upload-box">
+
+                <i class="fa-solid fa-cloud-arrow-up fa-3x"></i>
+
+                <h3>
+
+                    Drag & Drop
+
+                </h3>
+
+                <p>
+
+                    MP3 • WAV • AAC • M4A
+
+                </p>
+
+                <input
+                    id="voiceUpload"
+                    type="file"
+                    accept="audio/*"
+                    hidden>
+
+                <button
+                    class="btn btn-primary mt-4"
+                    onclick="document.getElementById('voiceUpload').click()">
+
+                    Choose Audio
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Recording Information
+
+                </h2>
+
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Status
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Ready
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Duration
+
+                    </span>
+
+                    <span id="recordDuration">
+
+                        00:00
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Audio Format
+
+                    </span>
+
+                    <span>
+
+                        WAV
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Bitrate
+
+                    </span>
+
+                    <span>
+
+                        256 kbps
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        AI Enhancement
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Enabled
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Audio Preview
+
+                </h2>
+
+            </div>
+
+            <audio
+                id="voicePlayer"
+                controls
+                class="w-full">
+
+            </audio>
+
+            <div class="flex gap-3 mt-4">
+
+                <button
+                    id="playVoice"
+                    class="btn btn-primary">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Play
+
+                </button>
+
+                <button
+                    class="btn btn-secondary">
+
+                    <i class="fa-solid fa-pause"></i>
+
+                    Pause
+
+                </button>
+
+                <button
+                    class="btn btn-outline">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Voice Statistics
+
+                </h2>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stats-card">
+
+                    <h3 data-stat="48">
+
+                        0
+
+                    </h3>
+
+                    <p>
+
+                        Recordings
+
+                    </p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <h3>
+
+                        12.6 GB
+
+                    </h3>
+
+                    <p>
+
+                        Storage Used
+
+                    </p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <h3>
+
+                        184 ms
+
+                    </h3>
+
+                    <p>
+
+                        Avg Processing
+
+                    </p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <h3>
+
+                        98%
+
+                    </h3>
+
+                    <p>
+
+                        AI Accuracy
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="two-column">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    AI Transcript
+
+                </h2>
+
+                <span class="badge badge-success">
+
+                    Live
+
+                </span>
+
+            </div>
+
+            <textarea
+                id="transcript"
+                class="textarea"
+                rows="12"
+                placeholder="Your recorded speech will appear here..."></textarea>
+
+            <div class="flex justify-between items-center mt-4">
+
+                <small>
+
+                    Language Detection : Auto
+
+                </small>
+
+                <small>
+
+                    Confidence : 98%
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    AI Translation
+
+                </h2>
+
+                <span class="badge badge-primary">
+
+                    Ready
+
+                </span>
+
+            </div>
+
+            <textarea
+                id="translationOutput"
+                class="textarea"
+                rows="12"
+                readonly
+                placeholder="Translated text will appear here..."></textarea>
+
+            <div class="flex justify-between items-center mt-4">
+
+                <small>
+
+                    Translation Engine
+
+                </small>
+
+                <small>
+
+                    VoiceBridge AI v1.0
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2>
+
+                AI Actions
+
+            </h2>
+
+        </div>
+
+        <div class="grid grid-5">
+
+            <button
+                id="translateButton"
+                class="btn btn-primary">
+
+                <i class="fa-solid fa-language"></i>
+
+                Translate
+
+            </button>
+
+            <button
+                id="copyTranslation"
+                class="btn btn-secondary">
+
+                <i class="fa-solid fa-copy"></i>
+
+                Copy
+
+            </button>
+
+            <button
+                id="downloadTranslation"
+                class="btn btn-success">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download
+
+            </button>
+
+            <button
+                class="btn btn-outline">
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                Listen
+
+            </button>
+
+            <button
+                id="clearTranslation"
+                class="btn btn-danger">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Clear
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Recent Voice Notes
+
+            </h2>
+
+        </div>
+
+        <div class="activity-list">
+
+            <div class="voice-card activity-item">
+
+                <div>
+
+                    <strong>
+
+                        Meeting Recording
+
+                    </strong>
+
+                    <p>
+
+                        English • 2 min 34 sec
+
+                    </p>
+
+                </div>
+
+                <div class="flex gap-2">
+
+                    <button
+                        class="downloadVoice btn btn-outline">
+
+                        <i class="fa-solid fa-download"></i>
+
+                    </button>
+
+                    <button
+                        class="deleteVoice btn btn-danger">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="voice-card activity-item">
+
+                <div>
+
+                    <strong>
+
+                        Client Discussion
+
+                    </strong>
+
+                    <p>
+
+                        Hindi • 4 min 10 sec
+
+                    </p>
+
+                </div>
+
+                <div class="flex gap-2">
+
+                    <button
+                        class="downloadVoice btn btn-outline">
+
+                        <i class="fa-solid fa-download"></i>
+
+                    </button>
+
+                    <button
+                        class="deleteVoice btn btn-danger">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="voice-card activity-item">
+
+                <div>
+
+                    <strong>
+
+                        Lecture Notes
+
+                    </strong>
+
+                    <p>
+
+                        Marathi • 8 min 22 sec
+
+                    </p>
+
+                </div>
+
+                <div class="flex gap-2">
+
+                    <button
+                        class="downloadVoice btn btn-outline">
+
+                        <i class="fa-solid fa-download"></i>
+
+                    </button>
+
+                    <button
+                        class="deleteVoice btn btn-danger">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dashboard-section">
+
+    <div class="three-column">
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Today's Summary
+
+                </h2>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stats-card">
+
+                    <div class="stats-icon">
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                    </div>
+
+                    <h3 data-stat="32">
+
+                        0
+
+                    </h3>
+
+                    <p>
+
+                        Recordings
+
+                    </p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <div class="stats-icon">
+
+                        <i class="fa-solid fa-language"></i>
+
+                    </div>
+
+                    <h3 data-stat="87">
+
+                        0
+
+                    </h3>
+
+                    <p>
+
+                        Translations
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Storage Usage
+
+                </h2>
+
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Used Storage
+
+                    </span>
+
+                    <strong>
+
+                        2.6 GB
+
+                    </strong>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Available
+
+                    </span>
+
+                    <strong>
+
+                        7.4 GB
+
+                    </strong>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Audio Files
+
+                    </span>
+
+                    <strong>
+
+                        148
+
+                    </strong>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Processing Queue
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Empty
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h2>
+
+                    AI Status
+
+                </h2>
+
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Speech Recognition
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Online
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Translation Engine
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Running
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        Voice Synthesis
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Ready
+
+                    </span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <span>
+
+                        API Status
+
+                    </span>
+
+                    <span class="badge badge-success">
+
+                        Healthy
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../js/utils.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/animations.js"></script>
+
+<script src="../js/dashboard.js"></script>
+
+<script src="../js/voice-notes.js"></script>
+
+</body>
+
+</html>

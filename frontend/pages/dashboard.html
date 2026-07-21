@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | VoiceBridge AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <span>VoiceBridge AI</span>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button
+                    class="btn btn-secondary sidebar-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <button
+                    class="nav-icon"
+                    id="notify">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <div class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>VoiceBridge AI</h3>
+
+                    <small>AI Translator</small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a
+                    href="dashboard.html"
+                    class="active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="translation.html">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    <span>Live Translation</span>
+
+                </a>
+
+                <a href="voice-notes.html">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    <span>Voice Notes</span>
+
+                </a>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    <span>History</span>
+
+                </a>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card">
+
+                <h4>Pro Features</h4>
+
+                <small>Unlock multilingual voice cloning and AI enhancements.</small>
+
+                <button
+                    class="btn btn-primary w-full mt-4"
+                    style="margin-top: 1rem;">
+
+                    Upgrade
+
+                </button>
+
+            </div>
+
+            <div class="sidebar-footer">
+
+                <div class="sidebar-user">
+
+                    <div class="avatar-placeholder">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="sidebar-user-info">
+
+                        <h4>Aryan Lande</h4>
+
+                        <span>AI Engineer</span>
+
+                    </div>
+
+                </div>
+
+                <button
+                    id="logout"
+                    class="btn btn-outline w-full mt-4">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="container">
+
+                <div class="page-header">
+
+                    <div class="flex-1">
+
+                        <span class="badge badge-success">
+
+                            AI Powered Dashboard
+
+                        </span>
+
+                        <h1
+                            id="welcomeUser"
+                            class="mt-3">
+
+                            Welcome back, Aryan 👋
+
+                        </h1>
+
+                        <p>
+
+                            Manage translations, voice notes, language models and analytics from one place.
+
+                        </p>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 flex-shrink-0">
+
+                        <div class="search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="dashboardSearch"
+                                placeholder="Search anything...">
+
+                        </div>
+
+                        <button class="btn btn-secondary">
+
+                            <i class="fa-solid fa-filter"></i>
+
+                        </button>
+
+                        <button class="btn btn-primary">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            New Session
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <section class="dashboard-section">
+
+                    <div class="stats-grid">
+
+                        <div class="stats-card">
+
+                            <div class="stats-icon">
+
+                                <i class="fa-solid fa-language"></i>
+
+                            </div>
+
+                            <div class="stats-value" data-stat="1248">
+
+                                0
+
+                            </div>
+
+                            <div class="stats-label">
+
+                                Total Translations
+
+                            </div>
+
+                            <div class="stats-change positive">
+
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                +18.6%
+
+                            </div>
+
+                        </div>
+
+                        <div class="stats-card">
+
+                            <div class="stats-icon">
+
+                                <i class="fa-solid fa-microphone"></i>
+
+                            </div>
+
+                            <div class="stats-value" data-stat="387">
+
+                                0
+
+                            </div>
+
+                            <div class="stats-label">
+
+                                Voice Notes
+
+                            </div>
+
+                            <div class="stats-change positive">
+
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                +11.2%
+
+                            </div>
+
+                        </div>
+
+                        <div class="stats-card">
+
+                            <div class="stats-icon">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+                            <div class="stats-value">
+
+                                184ms
+
+                            </div>
+
+                            <div class="stats-label">
+
+                                Average Latency
+
+                            </div>
+
+                            <div class="stats-change positive">
+
+                                <i class="fa-solid fa-arrow-down"></i>
+
+                                Faster
+
+                            </div>
+
+                        </div>
+
+                        <div class="stats-card">
+
+                            <div class="stats-icon">
+
+                                <i class="fa-solid fa-earth-asia"></i>
+
+                            </div>
+
+                            <div class="stats-value" data-stat="22">
+
+                                0
+
+                            </div>
+
+                            <div class="stats-label">
+
+                                Languages Supported
+
+                            </div>
+
+                            <div class="stats-change positive">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Active
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-card-header">
+
+                            <h2 class="dashboard-card-title">
+
+                                Live Translation
+
+                            </h2>
+
+                            <span class="badge badge-success">
+
+                                AI Powered
+
+                            </span>
+
+                        </div>
+
+                        <div class="language-selector">
+
+                            <div class="language-box">
+
+                                <select id="sourceLanguage">
+
+                                    <option>English</option>
+                                    <option>Hindi</option>
+                                    <option>Marathi</option>
+                                    <option>Tamil</option>
+                                    <option>Telugu</option>
+                                    <option>Gujarati</option>
+
+                                </select>
+
+                            </div>
+
+                            <button
+                                id="swapLanguage"
+                                class="btn btn-secondary btn-icon">
+
+                                <i class="fa-solid fa-right-left"></i>
+
+                            </button>
+
+                            <div class="language-box">
+
+                                <select id="targetLanguage">
+
+                                    <option>Hindi</option>
+                                    <option>English</option>
+                                    <option>Marathi</option>
+                                    <option>Tamil</option>
+                                    <option>Telugu</option>
+                                    <option>Gujarati</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="translation-grid">
+
+                            <div class="translation-box">
+
+                                <div class="translation-title">
+
+                                    Speech Transcript
+
+                                </div>
+
+                                <textarea
+                                    id="transcript"
+                                    class="textarea"
+                                    placeholder="Speak or type here..."></textarea>
+
+                            </div>
+
+                            <div class="translation-box">
+
+                                <div class="translation-title">
+
+                                    AI Translation
+
+                                </div>
+
+                                <textarea
+                                    id="translationOutput"
+                                    class="textarea"
+                                    readonly
+                                    placeholder="Your translated text will appear here..."></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="download-actions">
+
+                            <button
+                                id="recordButton"
+                                class="btn btn-danger">
+
+                                <i class="fa-solid fa-microphone"></i>
+
+                                Record
+
+                            </button>
+
+                            <button
+                                id="translateButton"
+                                class="btn btn-primary">
+
+                                <i class="fa-solid fa-language"></i>
+
+                                Translate
+
+                            </button>
+
+                            <button
+                                id="copyTranslation"
+                                class="btn btn-secondary">
+
+                                <i class="fa-solid fa-copy"></i>
+
+                                Copy
+
+                            </button>
+
+                            <button
+                                id="downloadTranslation"
+                                class="btn btn-accent">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                Download
+
+                            </button>
+
+                            <button
+                                id="clearTranslation"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Clear
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../js/utils.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/animations.js"></script>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

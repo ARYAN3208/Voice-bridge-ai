@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | VoiceBridge AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <span>
+
+                    VoiceBridge AI
+
+                </span>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="nav-icon">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <div class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        VoiceBridge AI
+
+                    </h3>
+
+                    <small>
+
+                        AI Translator
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="translation.html">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    Live Translation
+
+                </a>
+
+                <a href="voice-notes.html">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Voice Notes
+
+                </a>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    History
+
+                </a>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="active">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card">
+
+                <h4>
+
+                    Preferences
+
+                </h4>
+
+                <p>
+
+                    Customize your VoiceBridge AI experience.
+
+                </p>
+
+                <span class="badge badge-success">
+
+                    Active
+
+                </span>
+
+            </div>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="badge badge-success">
+
+                        Application Settings
+
+                    </span>
+
+                    <h1 class="mt-3">
+
+                        Settings
+
+                    </h1>
+
+                    <p>
+
+                        Manage your account preferences and personalize your VoiceBridge AI experience.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <section class="dashboard-section">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            General Settings
+
+                        </h2>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div>
+
+                                <h4>
+
+                                    Dark Mode
+
+                                </h4>
+
+                                <p>
+
+                                    Switch between light and dark theme.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch"
+                                id="themeSwitch">
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <div>
+
+                                <h4>
+
+                                    Notifications
+
+                                </h4>
+
+                                <p>
+
+                                    Receive important alerts and updates.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch active"
+                                id="notificationSwitch">
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <div>
+
+                                <h4>
+
+                                    Auto Save
+
+                                </h4>
+
+                                <p>
+
+                                    Automatically save translations.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch active"
+                                id="autoSaveSwitch">
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <div>
+
+                                <h4>
+
+                                    Auto Play Audio
+
+                                </h4>
+
+                                <p>
+
+                                    Play translated speech automatically.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch"
+                                id="autoPlaySwitch">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="dashboard-section">
+
+                <div class="two-column">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Language Settings
+
+                            </h2>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label class="label">
+
+                                Default Language
+
+                            </label>
+
+                            <select
+                                id="languageSelect"
+                                class="select">
+
+                                <option>English</option>
+                                <option>Hindi</option>
+                                <option>Marathi</option>
+                                <option>Tamil</option>
+                                <option>Telugu</option>
+                                <option>Gujarati</option>
+                                <option>Kannada</option>
+                                <option>Bengali</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <label class="label">
+
+                                Translation Speed
+
+                            </label>
+
+                            <select
+                                class="select">
+
+                                <option>Fast</option>
+                                <option>Balanced</option>
+                                <option>High Accuracy</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Privacy & Security
+
+                            </h2>
+
+                        </div>
+
+                        <div class="activity-list">
+
+                            <div class="activity-item">
+
+                                <span>
+
+                                    Encrypt Voice Notes
+
+                                </span>
+
+                                <div
+                                    class="switch active">
+
+                                </div>
+
+                            </div>
+
+                            <div class="activity-item">
+
+                                <span>
+
+                                    Cloud Backup
+
+                                </span>
+
+                                <div
+                                    class="switch active">
+
+                                </div>
+
+                            </div>
+
+                            <div class="activity-item">
+
+                                <span>
+
+                                    Save Translation History
+
+                                </span>
+
+                                <div
+                                    class="switch active">
+
+                                </div>
+
+                            </div>
+
+                            <div class="activity-item">
+
+                                <span>
+
+                                    Two-Factor Authentication
+
+                                </span>
+
+                                <div
+                                    class="switch">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="dashboard-section">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Account Actions
+
+                        </h2>
+
+                    </div>
+
+                    <div class="flex gap-3">
+
+                        <button
+                            id="saveSettings"
+                            class="btn btn-primary">
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Changes
+
+                        </button>
+
+                        <button
+                            id="resetSettings"
+                            class="btn btn-secondary">
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+                        <button
+                            class="btn btn-danger">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Delete Account
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../js/utils.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/animations.js"></script>
+
+<script src="../js/settings.js"></script>
+
+</body>
+
+</html>

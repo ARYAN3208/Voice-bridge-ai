@@ -1,0 +1,385 @@
+/* ======================================
+   Wrapper
+====================================== */
+
+.wrapper {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* ======================================
+   Main Content
+====================================== */
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+}
+
+/* ======================================
+   Section
+====================================== */
+
+.section {
+    padding: 5rem 0;
+}
+
+/* ======================================
+   Landing Page
+====================================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    max-width: 560px;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======================================
+   Authentication
+====================================== */
+
+.auth-layout {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 480px;
+
+    background: var(--background);
+}
+
+.auth-banner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 4rem;
+
+    background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 50%, #1f1f1f 100%);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.auth-banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -50%;
+
+    width: 200%;
+
+    height: 200%;
+
+    background: radial-gradient(circle, rgba(199,168,109,.15) 0%, transparent 70%);
+
+    animation: glowPulse 4s ease-in-out infinite;
+
+}
+
+.auth-form-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 3rem;
+
+    background: white;
+
+    border-left: 1px solid var(--border);
+
+}
+
+/* ======================================
+   Dashboard
+====================================== */
+
+.dashboard-layout {
+
+    display: flex;
+
+    min-height: 100vh;
+
+}
+
+.dashboard-content {
+
+    flex: 1;
+
+    margin-left: var(--sidebar-width);
+
+    padding: 2rem;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background: linear-gradient(135deg, #f7f4ee 0%, #faf8f4 100%);
+
+}
+
+.dashboard-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+
+}
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 1.5rem;
+
+}
+
+/* ======================================
+   Statistics
+====================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1400px;
+
+}
+
+/* ======================================
+   Translation
+====================================== */
+
+.translation-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2rem;
+
+}
+
+.translation-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.translation-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   Voice Notes
+====================================== */
+
+.voice-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2rem;
+
+}
+
+.voice-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   History
+====================================== */
+
+.history-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2rem;
+
+}
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+/* ======================================
+   Profile
+====================================== */
+
+.profile-layout {
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 2rem;
+
+}
+
+.profile-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+}
+
+.profile-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   Settings
+====================================== */
+
+.settings-layout {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   Footer Layout
+====================================== */
+
+.footer-layout {
+
+    padding: 4rem 0;
+
+    margin-top: 5rem;
+
+}
+
+/* ======================================
+   Two Column
+====================================== */
+
+.two-column {
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   Three Column
+====================================== */
+
+.three-column {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 2rem;
+
+}
+
+/* ======================================
+   Four Column
+====================================== */
+
+.four-column {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 2rem;
+
+}

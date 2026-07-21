@@ -1,0 +1,87 @@
+# ==========================
+# FastAPI Backend
+# ==========================
+fastapi
+uvicorn[standard]
+
+# ==========================
+# Database
+# ==========================
+sqlalchemy
+alembic
+psycopg2-binary
+
+# ==========================
+# Validation & Configuration
+# ==========================
+pydantic
+pydantic-settings
+python-dotenv
+
+# ==========================
+# Authentication & Security
+# ==========================
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# ==========================
+# HTTP Requests
+# ==========================
+httpx
+requests
+
+# ==========================
+# AI - Speech to Text
+# ==========================
+deepgram-sdk
+
+# ==========================
+# AI - Translation
+# ==========================
+transformers
+torch
+sentencepiece
+sacremoses
+accelerate
+
+# ==========================
+# AI - Text to Speech
+# ==========================
+elevenlabs
+
+# ==========================
+# LLM
+# ==========================
+openai
+google-generativeai
+
+# ==========================
+# RAG
+# ==========================
+chromadb
+
+# ==========================
+# Data Processing
+# ==========================
+numpy
+pandas
+
+# ==========================
+# Audio Processing
+# ==========================
+soundfile
+librosa
+pydub
+ffmpeg-python
+
+# ==========================
+# Utilities
+# ==========================
+tqdm
+rich
+
+# ==========================
+# Testing
+# ==========================
+pytest

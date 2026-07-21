@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | VoiceBridge AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <span>VoiceBridge AI</span>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <div class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>VoiceBridge AI</h3>
+
+                    <small>AI Translator</small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="translation.html">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    Live Translation
+
+                </a>
+
+                <a href="voice-notes.html">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Voice Notes
+
+                </a>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    History
+
+                </a>
+
+                <a
+                    href="profile.html"
+                    class="active">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </div>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="badge badge-success">
+
+                        User Profile
+
+                    </span>
+
+                    <h1 class="mt-3">
+
+                        My Profile
+
+                    </h1>
+
+                    <p>
+
+                        Manage your account information and preferences.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="profile-layout">
+
+                <div class="profile-sidebar">
+
+                    <div class="profile-card">
+
+                        <div class="profile-header">
+
+                             <div id="profileAvatar" class="profile-avatar">
+                                <i class="fa-solid fa-user"></i>
+                             </div>
+
+                            <div class="profile-info">
+
+                                <h3>
+
+                                    Aryan Lande
+
+                                </h3>
+
+                                <p>
+
+                                    AI Engineer
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <input
+                            id="avatarInput"
+                            type="file"
+                            accept="image/*"
+                            hidden>
+
+                        <button
+                            class="btn btn-outline w-full"
+                            onclick="document.getElementById('avatarInput').click()">
+
+                            <i class="fa-solid fa-camera"></i>
+
+                            Change Photo
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="profile-content">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Personal Information
+
+                            </h2>
+
+                        </div>
+
+                        <form
+                            id="profileForm">
+
+                            <div class="two-column">
+
+                                <div class="input-group">
+
+                                    <label class="label">
+
+                                        Full Name
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        class="input"
+                                        value="Aryan Lande">
+
+                                </div>
+
+                                <div class="input-group">
+
+                                    <label class="label">
+
+                                        Email
+
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        class="input"
+                                        value="aryan@example.com">
+
+                                </div>
+
+                                <div class="input-group">
+
+                                    <label class="label">
+
+                                        Phone
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="input"
+                                        value="+91 9876543210">
+
+                                </div>
+
+                                <div class="input-group">
+
+                                    <label class="label">
+
+                                        Organization
+
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="input"
+                                        value="RCP Ghansoli">
+
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary">
+
+                                    <i class="fa-solid fa-floppy-disk"></i>
+
+                                    Save Profile
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="card mt-5">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Change Password
+
+                            </h2>
+
+                        </div>
+
+                        <form id="passwordForm">
+
+                            <div class="input-group">
+
+                                <label class="label">
+
+                                    Current Password
+
+                                </label>
+
+                                <input
+                                    type="password"
+                                    name="currentPassword"
+                                    class="input"
+                                    placeholder="Current Password">
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label class="label">
+
+                                    New Password
+
+                                </label>
+
+                                <input
+                                    type="password"
+                                    name="newPassword"
+                                    class="input"
+                                    placeholder="New Password">
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label class="label">
+
+                                    Confirm Password
+
+                                </label>
+
+                                <input
+                                    type="password"
+                                    name="confirmPassword"
+                                    class="input"
+                                    placeholder="Confirm Password">
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                <i class="fa-solid fa-key"></i>
+
+                                Update Password
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <div class="card mt-5">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Account Preferences
+
+                            </h2>
+
+                        </div>
+
+                        <div class="setting">
+
+                            <div>
+
+                                <h4>
+
+                                    Dark Mode
+
+                                </h4>
+
+                                <p>
+
+                                    Enable dark appearance.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch"
+                                id="themeToggle">
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting">
+
+                            <div>
+
+                                <h4>
+
+                                    Notifications
+
+                                </h4>
+
+                                <p>
+
+                                    Receive important updates.
+
+                                </p>
+
+                            </div>
+
+                            <div
+                                class="switch active">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card mt-5">
+
+                        <div class="card-header">
+
+                            <h2>
+
+                                Account
+
+                            </h2>
+
+                        </div>
+
+                        <div class="flex gap-3">
+
+                            <button
+                                id="logout"
+                                class="btn btn-danger">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Delete Account
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../js/utils.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/animations.js"></script>
+
+<script src="../js/profile.js"></script>
+
+</body>
+
+</html>

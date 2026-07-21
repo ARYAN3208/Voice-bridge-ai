@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Live Translation | VoiceBridge AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <span>VoiceBridge AI</span>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <button
+                    class="nav-icon">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <div class="nav-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-language"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>VoiceBridge AI</h3>
+
+                    <small>AI Translator</small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-menu">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a
+                    href="translation.html"
+                    class="active">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    Live Translation
+
+                </a>
+
+                <a href="voice-notes.html">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Voice Notes
+
+                </a>
+
+                <a href="history.html">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    History
+
+                </a>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="card">
+
+                <h4>AI Status</h4>
+
+                <p>All translation services are online.</p>
+
+                <div class="badge badge-success mt-3">
+
+                    ● Connected
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="dashboard-content">
+
+            <div class="container">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="badge badge-success">
+
+                            AI Powered Translation
+
+                        </span>
+
+                        <h1 class="mt-3">
+
+                            Live Translation
+
+                        </h1>
+
+                        <p>
+
+                            Speak, upload or type text and instantly translate it into Indian languages.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <section class="dashboard-section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>Translation Workspace</h2>
+
+                            <span class="badge badge-success">Live</span>
+
+                        </div>
+
+                        <div class="two-column mt-4">
+
+                            <div class="input-group">
+
+                                <label class="label">Source Language</label>
+
+                                <select
+                                    id="sourceLanguage"
+                                    class="select">
+
+                                    <option>English</option>
+                                    <option>Hindi</option>
+                                    <option>Marathi</option>
+                                    <option>Tamil</option>
+                                    <option>Telugu</option>
+                                    <option>Gujarati</option>
+                                    <option>Bengali</option>
+                                    <option>Kannada</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="input-group">
+
+                                <label class="label">Target Language</label>
+
+                                <select
+                                    id="targetLanguage"
+                                    class="select">
+
+                                    <option>Hindi</option>
+                                    <option>English</option>
+                                    <option>Marathi</option>
+                                    <option>Tamil</option>
+                                    <option>Telugu</option>
+                                    <option>Gujarati</option>
+                                    <option>Bengali</option>
+                                    <option>Kannada</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-center gap-3 mt-5">
+
+                            <button
+                                id="swapLanguage"
+                                class="btn btn-secondary">
+
+                                <i class="fa-solid fa-right-left"></i>
+
+                                Swap
+
+                            </button>
+
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="four-column">
+
+                            <button
+                                id="recordButton"
+                                class="btn btn-danger">
+
+                                <i class="fa-solid fa-microphone"></i>
+
+                                Record
+
+                            </button>
+
+                            <button
+                                class="btn btn-secondary">
+
+                                <i class="fa-solid fa-stop"></i>
+
+                                Stop
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-upload"></i>
+
+                                Upload Audio
+
+                            </button>
+
+                            <button
+                                id="clearTranslation"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Clear
+
+                            </button>
+
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="flex justify-between items-center">
+
+                            <div>
+
+                                <h4>Translation Status</h4>
+
+                                <small>Waiting for voice input...</small>
+
+                            </div>
+
+                            <span class="badge badge-success">Ready</span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="two-column">
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>Live Transcript</h2>
+
+                                <span class="badge badge-primary">Input</span>
+
+                            </div>
+
+                            <textarea
+                                id="transcript"
+                                class="textarea"
+                                rows="14"
+                                placeholder="Your live speech transcript will appear here..."></textarea>
+
+                            <div class="flex justify-between items-center mt-4">
+
+                                <small>Language Detection : Auto</small>
+
+                                <small>Confidence : 98%</small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>AI Translation</h2>
+
+                                <span class="badge badge-success">Output</span>
+
+                            </div>
+
+                            <textarea
+                                id="translationOutput"
+                                class="textarea"
+                                rows="14"
+                                readonly
+                                placeholder="Translated text will appear here..."></textarea>
+
+                            <div class="flex justify-between items-center mt-4">
+
+                                <small>AI Translation Complete</small>
+
+                                <small>Latency : 184 ms</small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>AI Actions</h2>
+
+                        </div>
+
+                        <div class="four-column">
+
+                            <button
+                                id="translateButton"
+                                class="btn btn-primary">
+
+                                <i class="fa-solid fa-language"></i>
+
+                                Translate
+
+                            </button>
+
+                            <button
+                                id="copyTranslation"
+                                class="btn btn-secondary">
+
+                                <i class="fa-solid fa-copy"></i>
+
+                                Copy
+
+                            </button>
+
+                            <button
+                                id="downloadTranslation"
+                                class="btn btn-success">
+
+                                <i class="fa-solid fa-download"></i>
+
+                                Download
+
+                            </button>
+
+                            <button
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-volume-high"></i>
+
+                                Listen
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="two-column">
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>Audio Preview</h2>
+
+                                <span class="badge badge-success">Ready</span>
+
+                            </div>
+
+                            <audio
+                                id="voicePlayer"
+                                controls
+                                class="w-full">
+
+                            </audio>
+
+                            <div class="flex gap-3 mt-4">
+
+                                <button
+                                    id="playVoice"
+                                    class="btn btn-primary">
+
+                                    <i class="fa-solid fa-play"></i>
+
+                                    Play
+
+                                </button>
+
+                                <button
+                                    class="btn btn-secondary">
+
+                                    <i class="fa-solid fa-pause"></i>
+
+                                    Pause
+
+                                </button>
+
+                                <button
+                                    class="btn btn-outline">
+
+                                    <i class="fa-solid fa-rotate-right"></i>
+
+                                    Replay
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>Translation Analytics</h2>
+
+                            </div>
+
+                            <div class="stats-grid">
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-stopwatch"></i>
+
+                                    </div>
+
+                                    <h3>184 ms</h3>
+
+                                    <p>Average Latency</p>
+
+                                </div>
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-language"></i>
+
+                                    </div>
+
+                                    <h3>22</h3>
+
+                                    <p>Languages</p>
+
+                                </div>
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-wave-square"></i>
+
+                                    </div>
+
+                                    <h3>98%</h3>
+
+                                    <p>Accuracy</p>
+
+                                </div>
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-microphone"></i>
+
+                                    </div>
+
+                                    <h3>Live</h3>
+
+                                    <p>Recording</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h2>Recent Translation Activity</h2>
+
+                        </div>
+
+                        <ul id="recentActivity">
+
+                            <li class="activity-item">
+
+                                <span>English → Hindi</span>
+
+                                <small>2 min ago</small>
+
+                            </li>
+
+                            <li class="activity-item">
+
+                                <span>Marathi → Tamil</span>
+
+                                <small>15 min ago</small>
+
+                            </li>
+
+                            <li class="activity-item">
+
+                                <span>Hindi → Gujarati</span>
+
+                                <small>30 min ago</small>
+
+                            </li>
+
+                            <li class="activity-item">
+
+                                <span>Telugu → English</span>
+
+                                <small>1 hour ago</small>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+                <section class="dashboard-section">
+
+                    <div class="three-column">
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>Today's Summary</h2>
+
+                            </div>
+
+                            <div class="stats-grid">
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-language"></i>
+
+                                    </div>
+
+                                    <h3 data-stat="124">0</h3>
+
+                                    <p>Translations</p>
+
+                                </div>
+
+                                <div class="stats-card">
+
+                                    <div class="stats-icon">
+
+                                        <i class="fa-solid fa-microphone-lines"></i>
+
+                                    </div>
+
+                                    <h3 data-stat="48">0</h3>
+
+                                    <p>Voice Notes</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>Recent Files</h2>
+
+                            </div>
+
+                            <ul class="activity-list">
+
+                                <li class="activity-item">
+
+                                    <div>
+
+                                        <strong>Meeting.mp3</strong>
+
+                                        <p>English → Hindi</p>
+
+                                    </div>
+
+                                    <button class="btn btn-outline">
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </li>
+
+                                <li class="activity-item">
+
+                                    <div>
+
+                                        <strong>Interview.wav</strong>
+
+                                        <p>Marathi → English</p>
+
+                                    </div>
+
+                                    <button class="btn btn-outline">
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </li>
+
+                                <li class="activity-item">
+
+                                    <div>
+
+                                        <strong>Lecture.mp3</strong>
+
+                                        <p>Hindi → Tamil</p>
+
+                                    </div>
+
+                                    <button class="btn btn-outline">
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card">
+
+                            <div class="card-header">
+
+                                <h2>System Status</h2>
+
+                            </div>
+
+                            <div class="activity-list">
+
+                                <div class="activity-item">
+
+                                    <span>AI Translation</span>
+
+                                    <span class="badge badge-success">Online</span>
+
+                                </div>
+
+                                <div class="activity-item">
+
+                                    <span>Speech Recognition</span>
+
+                                    <span class="badge badge-success">Active</span>
+
+                                </div>
+
+                                <div class="activity-item">
+
+                                    <span>Voice Synthesis</span>
+
+                                    <span class="badge badge-success">Running</span>
+
+                                </div>
+
+                                <div class="activity-item">
+
+                                    <span>API Status</span>
+
+                                    <span class="badge badge-success">Healthy</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../js/utils.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/animations.js"></script>
+
+<script src="../js/dashboard.js"></script>
+
+<script src="../js/translation.js"></script>
+
+</body>
+
+</html>
