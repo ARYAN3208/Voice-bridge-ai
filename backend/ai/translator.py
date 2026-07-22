@@ -1,32 +1,63 @@
-from google import genai
+import json
 
-from config import settings
-
+from ai.model_loader import get_gemini_client
+from ai.prompt_templates import (
+    TRANSLATION_PROMPT,
+    GRAMMAR_PROMPT,
+)
 
 class Translator:
-    def __init__(self):
-        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
-    def translate(
+    def __init__(self):
+        self.client = get_gemini_client()
+
+    async def translate(
         self,
         text: str,
         source_language: str,
         target_language: str,
-    ) -> dict:
+    ):
 
-        if not text.strip():
-            raise ValueError("Text cannot be empty.")
+        prompt = TRANSLATION_PROMPT.format(
+            source_language=source_language,
+            target_language=target_language,
+            text=text,
+        )
+
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+
+        return response.text.strip()
+
+    async def grammar_correct(
+        self,
+        text: str,
+    ):
+
+        prompt = GRAMMAR_PROMPT.format(
+            text=text,
+        )
+
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+
+        return response.text.strip()
+
+    async def translate_json(
+        self,
+        text: str,
+        source_language: str,
+        target_language: str,
+    ):
 
         prompt = f"""
-You are a professional translator.
+Return ONLY valid JSON.
 
 Translate the following text.
-
-Rules:
-- Preserve the original meaning.
-- Do not add or remove information.
-- Keep names unchanged.
-- Return only the translated text.
 
 Source Language:
 {source_language}
@@ -36,21 +67,22 @@ Target Language:
 
 Text:
 {text}
+
+JSON Format:
+
+{{
+    "translation": "...",
+    "source_language": "{source_language}",
+    "target_language": "{target_language}"
+}}
 """
 
         response = self.client.models.generate_content(
-            model=settings.GEMINI_MODEL,
+            model="gemini-2.5-flash",
             contents=prompt,
         )
 
-        translated_text = response.text.strip()
-
-        return {
-            "source_language": source_language,
-            "target_language": target_language,
-            "original_text": text,
-            "translated_text": translated_text,
-        }
+        return json.loads(response.text)
 
 
 translator = Translator()

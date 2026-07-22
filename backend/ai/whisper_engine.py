@@ -1,42 +1,54 @@
 from pathlib import Path
+from deepgram import (
+    FileSource,
+    PrerecordedOptions,
+)
 
-from faster_whisper import WhisperModel
-
-from config import settings
-from backend.ai.model_loader import load_whisper_model
+from ai.model_loader import get_deepgram_client
 
 
 class WhisperEngine:
-    def __init__(self):
-        self.model = load_whisper_model()
 
-    def transcribe(
+    def __init__(self):
+        self.client = get_deepgram_client()
+
+    async def transcribe(
         self,
         audio_path: str,
         language: str | None = None,
-    ) -> dict:
+        diarize: bool = True,
+        punctuate: bool = True,
+        smart_format: bool = True,
+    ):
 
-        path = Path(audio_path)
+        audio_file = Path(audio_path)
 
-        if not path.exists():
-            raise FileNotFoundError(f"{audio_path} not found.")
+        with open(audio_file, "rb") as file:
+            payload: FileSource = {
+                "buffer": file.read(),
+            }
 
-        segments, info = self.model.transcribe(
-            str(path),
+        options = PrerecordedOptions(
+            model="nova-3",
             language=language,
-            beam_size=settings.WHISPER_BEAM_SIZE,
+            smart_format=smart_format,
+            punctuate=punctuate,
+            diarize=diarize,
+            detect_language=language is None,
         )
 
-        transcript = ""
+        response = self.client.listen.rest.v("1").transcribe_file(
+            payload,
+            options,
+        )
 
-        for segment in segments:
-            transcript += segment.text.strip() + " "
+        result = response.results.channels[0].alternatives[0]
 
         return {
-            "text": transcript.strip(),
-            "language": info.language,
-            "language_probability": info.language_probability,
-            "duration": info.duration,
+            "transcript": result.transcript,
+            "confidence": result.confidence,
+            "language": response.results.channels[0].detected_language,
+            "words": result.words,
         }
 
 

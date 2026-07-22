@@ -1,3 +1,7 @@
+from api.pipeline import router as pipeline_router
+
+app.include_router(pipeline_router)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 

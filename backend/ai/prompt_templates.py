@@ -1,59 +1,165 @@
-SYSTEM_TRANSLATION_PROMPT = """
-You are VoiceBridge AI, a multilingual translation assistant.
+TRANSLATION_PROMPT = """
+You are an expert multilingual translator.
 
-Your responsibilities:
-- Translate accurately.
-- Preserve meaning and context.
-- Preserve names, numbers, URLs, email addresses, and code snippets.
-- Do not add or remove information.
-- Maintain the original tone.
-- Return only the translated text.
+Translate the given text.
+
+Rules:
+
+- Preserve meaning.
+- Preserve names.
+- Preserve numbers.
+- Preserve punctuation.
+- Do not explain.
+- Return ONLY the translated text.
+
+Source Language:
+{source_language}
+
+Target Language:
+{target_language}
+
+Text:
+{text}
 """
 
 
-SYSTEM_LANGUAGE_DETECTION_PROMPT = """
-Detect the language of the given text.
+GRAMMAR_PROMPT = """
+You are an English grammar expert.
 
-Return only the ISO 639-1 language code.
+Correct grammar without changing the meaning.
 
-Examples:
-English -> en
-Hindi -> hi
-Tamil -> ta
-Telugu -> te
-Marathi -> mr
-French -> fr
-Spanish -> es
+Rules:
+
+- Preserve tone.
+- Preserve formatting.
+- Preserve names.
+- Do not explain.
+- Return ONLY corrected text.
+
+Text:
+
+{text}
 """
 
 
-SYSTEM_SUMMARIZATION_PROMPT = """
-Summarize the given text while preserving important information.
+SUMMARY_PROMPT = """
+You are an AI meeting assistant.
 
-Keep the summary concise and easy to understand.
+Summarize the following conversation.
+
+Rules:
+
+- Keep it concise.
+- Use bullet points.
+- Include important decisions.
+- Include important discussions.
+- Ignore greetings.
+
+Conversation:
+
+{text}
 """
 
 
-SYSTEM_GRAMMAR_PROMPT = """
-Correct grammar and spelling mistakes.
+ACTION_ITEMS_PROMPT = """
+You are an AI meeting assistant.
 
-Do not change the meaning.
+Extract action items.
 
-Return only the corrected text.
+Return ONLY JSON.
+
+JSON Format:
+
+[
+    {
+        "task":"",
+        "owner":"",
+        "deadline":""
+    }
+]
+
+Conversation:
+
+{text}
 """
 
 
-SYSTEM_TRANSCRIPTION_PROMPT = """
-Transcribe the speech accurately.
+SENTIMENT_PROMPT = """
+Analyze the sentiment.
 
-Do not hallucinate words.
+Return ONLY JSON.
 
-Preserve punctuation whenever possible.
+JSON Format:
+
+{
+    "sentiment":"",
+    "confidence":""
+}
+
+Text:
+
+{text}
 """
 
 
-SYSTEM_TTS_PROMPT = """
-Generate natural sounding speech.
+KEYWORD_PROMPT = """
+Extract important keywords.
 
-Maintain correct pronunciation for the selected language.
+Rules:
+
+- Ignore stop words.
+- Return ONLY JSON.
+
+JSON Format:
+
+{
+    "keywords":[]
+}
+
+Text:
+
+{text}
+"""
+
+
+LANGUAGE_DETECTION_PROMPT = """
+Identify the language.
+
+Return ONLY JSON.
+
+JSON Format:
+
+{
+    "language":"",
+    "code":""
+}
+
+Text:
+
+{text}
+"""
+
+
+JSON_TRANSLATION_PROMPT = """
+Translate the text.
+
+Return ONLY JSON.
+
+JSON Format:
+
+{
+    "translation":"",
+    "source_language":"",
+    "target_language":""
+}
+
+Source Language:
+{source_language}
+
+Target Language:
+{target_language}
+
+Text:
+
+{text}
 """

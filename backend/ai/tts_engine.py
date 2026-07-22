@@ -1,39 +1,44 @@
 from pathlib import Path
-from uuid import uuid4
 
-from gtts import gTTS
+from deepgram import SpeakOptions
 
-from backend.utils.constants import EXPORT_AUDIO_DIR
+from ai.model_loader import get_deepgram_client
 
 
 class TTSEngine:
-    def __init__(self):
-        Path(EXPORT_AUDIO_DIR).mkdir(parents=True, exist_ok=True)
 
-    def generate_speech(
+    def __init__(self):
+        self.client = get_deepgram_client()
+
+    async def generate_speech(
         self,
         text: str,
-        language: str,
-    ) -> dict:
+        output_path: str,
+        voice: str = "aura-2-thalia-en",
+    ):
 
-        if not text.strip():
-            raise ValueError("Text cannot be empty.")
-
-        filename = f"{uuid4().hex}.mp3"
-        output_path = Path(EXPORT_AUDIO_DIR) / filename
-
-        speech = gTTS(
-            text=text,
-            lang=language,
-            slow=False,
+        Path(output_path).parent.mkdir(
+            parents=True,
+            exist_ok=True,
         )
 
-        speech.save(str(output_path))
+        options = SpeakOptions(
+            model=voice,
+        )
+
+        response = self.client.speak.rest.v("1").save(
+            output_path,
+            {
+                "text": text,
+            },
+            options,
+        )
 
         return {
-            "language": language,
-            "audio_path": str(output_path),
-            "filename": filename,
+            "success": True,
+            "path": output_path,
+            "voice": voice,
+            "response": response,
         }
 
 
