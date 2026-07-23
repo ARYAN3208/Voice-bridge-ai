@@ -1,3 +1,6 @@
+from api.translation import router as translation_router
+
+app.include_router(translation_router)
 from api.pipeline import router as pipeline_router
 
 app.include_router(pipeline_router)
